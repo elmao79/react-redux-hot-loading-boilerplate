@@ -1,21 +1,25 @@
 
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { hot, AppContainer } from 'react-hot-loader';
+import { getStore } from './redux/store';
+import { Provider } from 'react-redux';
+import MyComponent from './components/my-component';
+
+const store = getStore();
 
 class Prueba extends Component {
     render() {
         return (
-            <h1>Hello world!</h1>
+            <Provider store = {store}>
+                <MyComponent />
+            </Provider>
         )
     }
 }
 
 const render = _ => {
     ReactDOM.render(
-        <AppContainer>
-            <Prueba />
-        </AppContainer>,
+        <Prueba />,
         document.getElementById('app')
     )
 };
