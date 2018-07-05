@@ -9,7 +9,6 @@ const PATHS = {
 
 module.exports = {
     entry: [
-        //'webpack-dev-server/client?http://localhost:3000',
         'react-hot-loader/patch',
         PATHS.SRC
     ],
@@ -18,6 +17,7 @@ module.exports = {
         filename: 'app.bundle.js'
     },
     devServer: {
+        port: 8081,
         contentBase: PATHS.DIST,
         publicPath: '/js/'
     },
